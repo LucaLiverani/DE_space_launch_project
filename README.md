@@ -10,10 +10,18 @@ To perform complex data processing, I harness the power of Databricks. Databrick
 
 Once data transformations are complete, I utilize the robust data analysis and visualization capabilities of Power BI. With Power BI, I gain valuable insights into the success rates and cost trends of space launches through compelling visualizations and reports.
 
-
 ## Overall Architecture:
 ![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/Architecture.png?raw=true)
 ## Data Model
+I applied normalization techniques to convert a single JSON file into a star schema for efficient data analysis. The JSON file contained comprehensive information about rocket launches, but it was denormalized, meaning all data was in a single structure.
+
+To begin, I identified distinct entities within the JSON file: rockets, agencies, missions, and launch pads. I then separated the data into a fact table, "ft_launch," and four dimension tables: "dm_rocket," "dm_agency," "dm_mission," and "dm_pad."
+
+The fact table, "ft_launch," served as the central table and contained core data points for each rocket launch. It included foreign keys to link to the dimension tables and additional measures like launch success status and payload mass.
+
+Each dimension table provided contextual information about the entities involved in the launches. The "dm_rocket" table captured rocket-specific details, such as name, manufacturer, country, and payload capacity. The "dm_agency" table stored information about space agencies, including name, country, and establishment year. The "dm_mission" table held data about each mission, such as name, type, launch date, and destination. Lastly, the "dm_pad" table contained details about the launch pads, including name, location, and launch complex.
+
+To establish relationships between the tables, I created foreign keys in the fact table that referenced the primary keys of the corresponding dimension tables. These foreign keys facilitated efficient querying and analysis.
 ![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/Star_schema.png?raw=true)
 ## ETL from the API to Databricks
 ![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/ETL_airflow.png?raw=true)

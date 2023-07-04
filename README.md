@@ -36,3 +36,12 @@ The **ETL process** is implemented using Airflow and Databricks. The first step 
 Once the dimension tables are loaded, the principal fact table, ft_launch, is loaded. This table consolidates key metrics and measurements related to each space launch. The loading process includes rigorous quality control checks.
 
 To update the tables efficiently, the **MERGE** operation provided by Databricks is utilized. This operation synchronizes existing records and inserts new ones, maintaining data accuracy.
+
+## Data Analysis on PowerBI
+
+The project also includes a dedicated dashboard in Power BI to visualize and explore launch success and failure rates based on different attributes. The page provides interactive visualizations and filters to allow users to drill down into specific agencies, rockets, or launch pads.
+
+
+
+Additionally, another page in Power BI is designed specifically for cost analysis per launch. The dashboard provides insights into the cost of launches by agency and rocket. It also identifies key influencers that contribute to increased costs. Moreover, the dashboard displays the cost associated with the payload mass, enabling users to understand the cost implications related to payload.
+

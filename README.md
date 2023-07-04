@@ -2,6 +2,10 @@
 
 Welcome to my GitHub repository for a Data Engineering project focused on analyzing space launch data. In this project, I utilize the Space Launch API along with tools like **Apache Airflow**, **Azure Storage**, **Databricks**, and **Power BI** to retrieve, transform, store, and analyze crucial information about space launches.
 
+## Overall Architecture:
+
+![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/Architecture.png?raw=true)
+
 To ensure seamless data pipeline orchestration, I rely on Apache Airflow. With Airflow, I schedule regular data retrieval from the Space Launch API, keeping my dataset up-to-date.
 
 For efficient management of large volumes of data, I leverage Azure Storage, a secure and scalable cloud storage solution. This ensures easy access, high availability, and resilience against failures.
@@ -9,10 +13,6 @@ For efficient management of large volumes of data, I leverage Azure Storage, a s
 To perform complex data processing, I harness the power of Databricks. Databricks provides a collaborative environment with Apache Spark, enabling me to efficiently perform intricate data manipulations, aggregations, and calculations at scale.
 
 Once data transformations are complete, I utilize the robust data analysis and visualization capabilities of Power BI. With Power BI, I gain valuable insights into the success rates and cost trends of space launches through compelling visualizations and reports.
-
-## Overall Architecture:
-
-![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/Architecture.png?raw=true)
 
 ## Data Model
 
@@ -39,9 +39,11 @@ To update the tables efficiently, the **MERGE** operation provided by Databricks
 
 ## Data Analysis on PowerBI
 
+![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/dashboard_launch_analysis.png?raw=true)
+
 The project also includes a dedicated dashboard in Power BI to visualize and explore launch success and failure rates based on different attributes. The page provides interactive visualizations and filters to allow users to drill down into specific agencies, rockets, or launch pads.
 
-
+![alt text](https://github.com/LucaLiverani/DE_space_launch_project/blob/main/DE_space_launch_project_image/dashboard_cost_analysis.png?raw=true)
 
 Additionally, another page in Power BI is designed specifically for cost analysis per launch. The dashboard provides insights into the cost of launches by agency and rocket. It also identifies key influencers that contribute to increased costs. Moreover, the dashboard displays the cost associated with the payload mass, enabling users to understand the cost implications related to payload.
 
